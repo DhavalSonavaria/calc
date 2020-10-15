@@ -11,6 +11,20 @@ class Calculator {
     .then(response => response.text())
     .then(data => console.log(data));
   }
+  sendLog(log)
+  {
+    const Url = 'https://radiant-meadow-75813.herokuapp.com/calculate'
+    const Data = {
+    "calculation": "log"
+    };
+    const otherPram={
+      body:Data,
+      method:"POST"
+    };
+    fetch(Url,otherPram)
+    .then(response => response.text())
+    .then(data => console.log(data));
+  }
   clear() {
     this.currentOperand = ''
     this.previousOperand = ''
@@ -58,6 +72,7 @@ class Calculator {
         return
     }
     this.currentOperand = computation
+    log = prev.toString() + operation.toString + current.toString() + " = " + computation.toString() ;
     this.operation = undefined
     this.previousOperand = ''
   }
