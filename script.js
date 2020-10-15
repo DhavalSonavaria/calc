@@ -15,7 +15,7 @@ class Calculator {
   {
     const Url = 'https://radiant-meadow-75813.herokuapp.com/calculate'
     const Data = {
-    "calculation": "log"
+    "calculation": log
     };
     const otherPram={
       body:Data,
