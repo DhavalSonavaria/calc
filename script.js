@@ -11,6 +11,7 @@ class Calculator {
     .then(response => response.text())
     .then(data => console.log(data));
   }
+
   sendLog(log)
   {
     const Url = 'https://radiant-meadow-75813.herokuapp.com/calculate'
@@ -72,8 +73,9 @@ class Calculator {
         return
     }
     this.currentOperand = computation
-    var log = previousOperand + operation + currentOperand + " = " + computation.toString() ;
-    sendLog(log);
+    var calculation = this.previousOperand + this.operation + this.currentOperand + " = " + computation.toString() ;
+    sendLog(calculation);
+    console.log(log);
     this.operation = undefined
     this.previousOperand = ''
   }
