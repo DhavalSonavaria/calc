@@ -7,7 +7,7 @@ class Calculator {
 
   updateLogs()
   {
-     fetch('http://127.0.0.1:8080/logs')
+     fetch('https://jsonplaceholder.typicode.com/todos/1')
     .then(response => response.text())
     .then(data => console.log(data));
   }
