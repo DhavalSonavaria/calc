@@ -73,9 +73,9 @@ class Calculator {
         return
     }
     this.currentOperand = computation
-    var calculation = this.previousOperand + this.operation + this.currentOperand + " = " + computation.toString() ;
-    sendLog(calculation);
-    console.log(log);
+    var calculationLog = this.previousOperand + this.operation + this.currentOperand + " = " + computation.toString();
+    this.sendLog(calculationLog);
+    console.log(calculationLog);
     this.operation = undefined
     this.previousOperand = ''
   }
