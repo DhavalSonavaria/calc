@@ -7,7 +7,7 @@ class Calculator {
 
   updateLogs()
   {
-     fetch('https://jsonplaceholder.typicode.com/todos/1')
+     fetch('https://radiant-meadow-75813.herokuapp.com/logs')
     .then(response => response.text())
     .then(data => console.log(data));
   }
