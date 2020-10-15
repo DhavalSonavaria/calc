@@ -72,8 +72,8 @@ class Calculator {
       default:
         return
     }
-    this.currentOperand = computation
     var calculationLog = this.previousOperand + this.operation + this.currentOperand + " = " + computation.toString();
+    this.currentOperand = computation
     this.sendLog(calculationLog);
     console.log(calculationLog);
     this.operation = undefined
