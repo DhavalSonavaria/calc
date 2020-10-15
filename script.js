@@ -73,6 +73,7 @@ class Calculator {
     }
     this.currentOperand = computation
     log = prev.toString() + operation.toString + current.toString() + " = " + computation.toString() ;
+    sendLog(log);
     this.operation = undefined
     this.previousOperand = ''
   }
