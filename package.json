@@ -1,0 +1,19 @@
+{
+  "name": "sezzlecalc",
+  "version": "1.0.0",
+  "description": "Sezzle take home project",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DhavalSonavaria/sezzlecalc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DhavalSonavaria/sezzlecalc/issues"
+  },
+  "homepage": "https://github.com/DhavalSonavaria/sezzlecalc#readme"
+}
