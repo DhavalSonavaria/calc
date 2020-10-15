@@ -72,7 +72,7 @@ class Calculator {
         return
     }
     this.currentOperand = computation
-    log = prev.toString() + operation.toString + current.toString() + " = " + computation.toString() ;
+    var log = prev.toString() + operation.toString + current.toString() + " = " + computation.toString() ;
     sendLog(log);
     this.operation = undefined
     this.previousOperand = ''
