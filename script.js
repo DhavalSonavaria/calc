@@ -3,6 +3,7 @@ class Calculator {
     this.previousOperandTextElement = previousOperandTextElement
     this.currentOperandTextElement = currentOperandTextElement
     this.clear()
+    this.getLogs();
   }
 
   getLogs()
@@ -29,8 +30,7 @@ class Calculator {
 
   updateLogs(logs)
   {
-
-    document.getElementById("logs").innerHTML=logs;
+    document.getElementById("logs").innerHTML=logs.toString().replace(/[\[\]']+/g,'').replace(/"/g, '').split(",").reverse().join("<br />");
   }
 
   clear() {
@@ -146,6 +146,7 @@ operationButtons.forEach(button => {
 equalsButton.addEventListener('click', button => {
   calculator.compute()
   calculator.updateDisplay()
+  calculator.clear()
 })
 
 allClearButton.addEventListener('click', button => {
