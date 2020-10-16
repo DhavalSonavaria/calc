@@ -71,9 +71,6 @@
     word-break: break-all;
     grid-template-columns: (1, 80px);
     grid-template-rows: (1, 80px);
-  }
-
-  .logger-grid .logs {
     color: white;
     font-size: 18px;
   }

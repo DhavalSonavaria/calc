@@ -5,27 +5,34 @@ class Calculator {
     this.clear()
   }
 
-  updateLogs()
+  getLogs()
   {
      fetch('https://radiant-meadow-75813.herokuapp.com/logs')
     .then(response => response.text())
-    .then(data => console.log(data));
+    .then(data => this.updateLogs(data));
   }
 
   sendLog(log)
   {
+
+    let data = JSON.stringify({calculation: log})
     const Url = 'https://radiant-meadow-75813.herokuapp.com/calculate'
-    const Data = {
-    "calculation": log
-    };
-    const otherPram={
-      body:Data,
-      method:"POST"
-    };
-    fetch(Url,otherPram)
-    .then(response => response.text())
-    .then(data => console.log(data));
+    fetch(Url,{
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+    },
+    body: data
+    }).then(response => response.text())
+    .then(data => this.updateLogs(data));
   }
+
+  updateLogs(logs)
+  {
+
+    document.getElementById("logs").innerHTML=logs;
+  }
+
   clear() {
     this.currentOperand = ''
     this.previousOperand = ''
@@ -72,10 +79,9 @@ class Calculator {
       default:
         return
     }
-    var calculationLog = this.previousOperand + this.operation + this.currentOperand + " = " + computation.toString();
+    var calculationLog = this.previousOperand + this.operation + this.currentOperand + "=" + computation.toString();
     this.currentOperand = computation
     this.sendLog(calculationLog);
-    console.log(calculationLog);
     this.operation = undefined
     this.previousOperand = ''
   }
@@ -140,7 +146,6 @@ operationButtons.forEach(button => {
 equalsButton.addEventListener('click', button => {
   calculator.compute()
   calculator.updateDisplay()
-  calculator.updateLogs()
 })
 
 allClearButton.addEventListener('click', button => {
