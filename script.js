@@ -1,31 +1,27 @@
-class Calculator {
+class Calculator{
   constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement
     this.currentOperandTextElement = currentOperandTextElement
     this.clear()
-    this.getLogs();
+    this.socket = io('https://radiant-meadow-75813.herokuapp.com/');
+    this.socket.on('connection',calculation=>{
+      this.updateLogs(calculation);
+    });
+    this.socket.on('calculation',calculation=>{
+      this.updateLogs(calculation);
+    });
   }
 
-  getLogs()
+
+
+  sendLog(calculationLog)
   {
-     fetch('https://radiant-meadow-75813.herokuapp.com/logs')
-    .then(response => response.text())
-    .then(data => this.updateLogs(data));
+    this.socket.emit('calculation',calculationLog);
   }
 
-  sendLog(log)
+  callServer()
   {
 
-    let data = JSON.stringify({calculation: log})
-    const Url = 'https://radiant-meadow-75813.herokuapp.com/calculate'
-    fetch(Url,{
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-    },
-    body: data
-    }).then(response => response.text())
-    .then(data => this.updateLogs(data));
   }
 
   updateLogs(logs)

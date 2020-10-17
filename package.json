@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DhavalSonavaria/sezzlecalc/issues"
   },
-  "homepage": "https://github.com/DhavalSonavaria/sezzlecalc#readme"
+  "homepage": "https://github.com/DhavalSonavaria/sezzlecalc#readme",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  }
 }
