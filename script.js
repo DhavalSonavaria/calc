@@ -19,11 +19,6 @@ class Calculator{
     this.socket.emit('calculation',calculationLog);
   }
 
-  callServer()
-  {
-
-  }
-
   updateLogs(logs)
   {
     document.getElementById("logs").innerHTML=logs.toString().replace(/[\[\]']+/g,'').replace(/"/g, '').split(",").reverse().join("<br />");
